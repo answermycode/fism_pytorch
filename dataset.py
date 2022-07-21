@@ -33,8 +33,8 @@ from tqdm import tqdm
 #     return user, item
 def load_data(batch_size):
     # 训练集 测试集
-    train_file = "D:\\Desktop\\fism_pytorch\\mangguo\\final_train.npy"
-    test_file = "D:\\Desktop\\fism_pytorch\\mangguo\\final_test.npy"
+    train_file = "D:\\Desktop\\fism_pytorch\\final_train.npy"
+    test_file = "D:\\Desktop\\fism_pytorch\\final_test.npy"
 
     n_user, m_item = 170909, 149626
     train_data = np.load(train_file, allow_pickle=True).tolist()
