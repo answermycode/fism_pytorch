@@ -96,7 +96,7 @@ class fism(nn.Module):
 
     def result(self, model, test_loader, mask, topk, epoch):
         rating_list = []
-        candi_item_id = np.load("D:\Desktop\\fism_pytorch\mangguo\candi_item_id.npy", allow_pickle=True).tolist()
+        candi_item_id = np.load("D:\Desktop\\fism_pytorch\candi_item_id.npy", allow_pickle=True).tolist()
         with torch.no_grad():
             model.eval()
             # pbar = tqdm(total=len(test_loader))
@@ -120,8 +120,8 @@ class fism(nn.Module):
                 result[id] = j.tolist()
                 id = id + 1
 
-        id2did = np.load("D:\Desktop\\fism_pytorch\mangguo\id2did_dict.npy", allow_pickle=True).item()
-        item2id = np.load("D:\Desktop\fism_pytorch\mangguo\id2item_dict.npy", allow_pickle=True).item()
+        id2did = np.load("D:\Desktop\\fism_pytorch\id2did_dict.npy", allow_pickle=True).item()
+        item2id = np.load("D:\Desktop\fism_pytorch\id2item_dict.npy", allow_pickle=True).item()
         id2item = {v: k for k, v in item2id.items()}
         list_result = []
         for i in result:
